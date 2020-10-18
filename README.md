@@ -13,7 +13,7 @@ View the Storybook [here](https://edricchan03.github.io/material-storybook).
 ## Available Components
 
 Name | Has [Stories](https://storybook.js.org/docs/angular/get-started/whats-a-story)? | Has Docs Examples Stories?
----|---|---
+---|:---:|:---:
 [Autocomplete][mat-autocomplete] | :negative_squared_cross_mark: | :negative_squared_cross_mark:
 [Badge][mat-badge] | :negative_squared_cross_mark: | :negative_squared_cross_mark:
 [Bottom Sheet][mat-bottom-sheet] | :negative_squared_cross_mark: | :negative_squared_cross_mark:
