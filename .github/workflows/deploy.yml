@@ -1,0 +1,46 @@
+name: Deploy workflow
+
+on:
+  push:
+    branches:
+    # Only accept deploying from the main branch
+    - main
+
+jobs:
+  deploy:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+    - uses: actions/checkout@v2
+    - name: Setup NodeJS LTS
+      uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    - name: Setup Angular problem matchers
+      uses: EdricChan03/angular-problem-matchers-action@v0.0.0
+    - name: Cache node modules
+      uses: actions/cache@v2
+      id: node_modules_cache
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-node_modules-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node_modules-${{ hashFiles('**/package-lock.json') }}-
+          ${{ runner.os }}-node_modules-
+    - name: Install dependencies
+      # Skip this step if a cache hit occurs on the key
+      if: steps.node_modules_cache.outputs.cache-hit != 'true'
+      run: npm ci
+        - name: Generate Storybook
+      run: npm run build-storybook
+    - name: Deploy site
+      uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages # The branch the action should deploy to.
+          FOLDER: storybook-static # The folder the action should deploy.
+          CLEAN: true # Automatically remove deleted files from the deploy branch
