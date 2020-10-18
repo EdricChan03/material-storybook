@@ -35,7 +35,7 @@ jobs:
       # Skip this step if a cache hit occurs on the key
       if: steps.node_modules_cache.outputs.cache-hit != 'true'
       run: npm ci
-        - name: Generate Storybook
+    - name: Generate Storybook
       run: npm run build-storybook
     - name: Deploy site
       uses: JamesIves/github-pages-deploy-action@3.7.1
