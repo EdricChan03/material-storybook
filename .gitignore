@@ -47,3 +47,6 @@ Thumbs.db
 
 # Compodoc
 documentation.json
+
+# Generated Storybook
+storybook-static/
