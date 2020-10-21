@@ -14,7 +14,7 @@ View the Storybook [here](https://edricchan03.github.io/material-storybook).
 
 Name | Has [Stories](https://storybook.js.org/docs/angular/get-started/whats-a-story)? | Has Docs Examples Stories?
 ---|:---:|:---:
-[Autocomplete][mat-autocomplete] | :negative_squared_cross_mark: | :negative_squared_cross_mark:
+[Autocomplete][mat-autocomplete] | :white_check_mark: | ~ (Form-related examples not included)
 [Badge][mat-badge] | :negative_squared_cross_mark: | :negative_squared_cross_mark:
 [Bottom Sheet][mat-bottom-sheet] | :negative_squared_cross_mark: | :negative_squared_cross_mark:
 [Button][mat-button] | :white_check_mark: | :white_check_mark:
