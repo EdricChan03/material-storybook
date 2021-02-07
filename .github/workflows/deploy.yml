@@ -22,7 +22,7 @@ jobs:
     - name: Setup Angular problem matchers
       uses: EdricChan03/angular-problem-matchers-action@v0.0.0
     - name: Cache node modules
-      uses: actions/cache@v2
+      uses: actions/cache@v2.1.4
       id: node_modules_cache
       with:
         path: node_modules
