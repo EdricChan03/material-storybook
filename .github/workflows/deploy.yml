@@ -20,7 +20,7 @@ jobs:
       with:
         node-version: '10.x'
     - name: Setup Angular problem matchers
-      uses: EdricChan03/angular-problem-matchers-action@v0.0.0
+      uses: EdricChan03/angular-problem-matchers-action@v1.0.0
     - name: Cache node modules
       uses: actions/cache@v3
       id: node_modules_cache
