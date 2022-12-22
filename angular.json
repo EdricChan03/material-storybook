@@ -22,7 +22,6 @@
           "skipTests": true
         },
         "@schematics/angular:module": {
-          "skipTests": true
         },
         "@schematics/angular:pipe": {
           "skipTests": true
@@ -43,7 +42,6 @@
             "main": "projects/empty-app/src/main.ts",
             "polyfills": "projects/empty-app/src/polyfills.ts",
             "tsConfig": "projects/empty-app/tsconfig.app.json",
-            "aot": true,
             "assets": [
               {
                 "glob": "*.css",
@@ -56,7 +54,13 @@
             "styles": [
               "projects/empty-app/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -86,7 +90,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
