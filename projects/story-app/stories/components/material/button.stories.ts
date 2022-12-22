@@ -20,6 +20,7 @@ export default {
   ],
   args: {
     label: 'Button',
+    icon: 'favorite',
     color: '',
     disabled: false,
     disableRipple: false
@@ -98,7 +99,7 @@ export const Icon: Story<MatButton> = (args) => ({
     [disabled]="disabled"
     [disableRipple]="disableRipple"
     (click)="onClick($event)">
-    <mat-icon>favorite</mat-icon>
+    <mat-icon>{{ icon }}</mat-icon>
   </button>
   `,
   moduleMetadata: {
@@ -114,7 +115,7 @@ export const FAB: Story<MatButton> = (args) => ({
     [disabled]="disabled"
     [disableRipple]="disableRipple"
     (click)="onClick($event)">
-    <mat-icon>favorite</mat-icon>
+    <mat-icon>{{ icon }}</mat-icon>
   </button>
   `,
   moduleMetadata: {
@@ -130,7 +131,24 @@ export const MiniFAB: Story<MatButton> = (args) => ({
     [disabled]="disabled"
     [disableRipple]="disableRipple"
     (click)="onClick($event)">
-    <mat-icon>favorite</mat-icon>
+    <mat-icon>{{ icon }}</mat-icon>
+  </button>
+  `,
+  moduleMetadata: {
+    imports: [MatButtonModule, MatIconModule]
+  },
+  props: args
+});
+
+export const ExtendedFAB: Story<MatButton> = (args) => ({
+  template: `
+  <button mat-fab extended
+    [color]="color"
+    [disabled]="disabled"
+    [disableRipple]="disableRipple"
+    (click)="onClick($event)">
+    <mat-icon>{{ icon }}</mat-icon>
+    {{ label }}
   </button>
   `,
   moduleMetadata: {
