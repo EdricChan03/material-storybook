@@ -1,13 +1,16 @@
 module.exports = {
-  "stories": [
-    "../projects/stories/**/*.stories.mdx",
-    "../projects/stories/**/*.stories.@(js|jsx|ts|tsx)"
+  stories: [
+    '../projects/stories/**/*.stories.mdx',
+    '../projects/stories/**/*.stories.@(js|jsx|ts|tsx)'
   ],
-  "addons": [
-    "@storybook/addon-essentials",
-    "@storybook/addon-a11y",
-    "@storybook/addon-cssresources",
-    "@storybook/addon-links",
-    "@storybook/addon-storysource"
-  ]
-}
+  addons: [
+    '@storybook/addon-essentials',
+    '@storybook/addon-a11y',
+    '@storybook/addon-cssresources',
+    '@storybook/addon-links',
+    '@storybook/addon-storysource'
+  ],
+  core: {
+    builder: 'webpack5'
+  }
+};
