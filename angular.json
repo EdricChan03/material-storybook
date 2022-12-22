@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "empty-app": {
+    "story-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:class": {
@@ -30,29 +30,29 @@
           "skipTests": true
         }
       },
-      "root": "projects/empty-app",
-      "sourceRoot": "projects/empty-app/src",
+      "root": "projects/story-app",
+      "sourceRoot": "projects/story-app/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/empty-app",
-            "index": "projects/empty-app/src/index.html",
-            "main": "projects/empty-app/src/main.ts",
-            "polyfills": "projects/empty-app/src/polyfills.ts",
-            "tsConfig": "projects/empty-app/tsconfig.app.json",
+            "outputPath": "dist/story-app",
+            "index": "projects/story-app/src/index.html",
+            "main": "projects/story-app/src/main.ts",
+            "polyfills": "projects/story-app/src/polyfills.ts",
+            "tsConfig": "projects/story-app/tsconfig.app.json",
             "assets": [
               {
                 "glob": "*.css",
                 "input": "node_modules/@angular/material/prebuilt-themes/",
                 "output": "/assets/themes/"
               },
-              "projects/empty-app/src/favicon.ico",
-              "projects/empty-app/src/assets"
+              "projects/story-app/src/favicon.ico",
+              "projects/story-app/src/assets"
             ],
             "styles": [
-              "projects/empty-app/src/styles.css"
+              "projects/story-app/src/styles.css"
             ],
             "scripts": [],
             "vendorChunk": true,
@@ -66,8 +66,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "projects/empty-app/src/environments/environment.ts",
-                  "with": "projects/empty-app/src/environments/environment.prod.ts"
+                  "replace": "projects/story-app/src/environments/environment.ts",
+                  "with": "projects/story-app/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -96,35 +96,48 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "empty-app:build"
+            "browserTarget": "story-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "empty-app:build:production"
+              "browserTarget": "story-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "empty-app:build"
+            "browserTarget": "story-app:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/empty-app/src/test.ts",
-            "polyfills": "projects/empty-app/src/polyfills.ts",
-            "tsConfig": "projects/empty-app/tsconfig.spec.json",
-            "karmaConfig": "projects/empty-app/karma.conf.js",
+            "main": "projects/story-app/src/test.ts",
+            "polyfills": "projects/story-app/src/polyfills.ts",
+            "tsConfig": "projects/story-app/tsconfig.spec.json",
+            "karmaConfig": "projects/story-app/karma.conf.js",
             "assets": [
-              "projects/empty-app/src/favicon.ico",
-              "projects/empty-app/src/assets"
+              "projects/story-app/src/favicon.ico",
+              "projects/story-app/src/assets"
             ],
             "styles": [
-              "projects/empty-app/src/styles.css"
+              "projects/story-app/src/styles.css"
             ],
             "scripts": []
+          }
+        },
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "browserTarget": "story-app:build",
+            "port": 6006
+          }
+        },
+        "build-storybook": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "browserTarget": "story-app:build"
           }
         }
       }
