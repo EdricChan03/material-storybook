@@ -1,0 +1,1 @@
+{"version":3,"file":"main.css","mappings":"AAAA,8EAA8E","sources":["./projects/story-app/src/styles.css"],"sourcesContent":["/* You can add global styles to this file, and also import other style files */\n@import '~@angular/material/prebuilt-themes/indigo-pink.css';\n"],"names":[],"sourceRoot":"webpack:///","x_google_ignoreList":[]}
