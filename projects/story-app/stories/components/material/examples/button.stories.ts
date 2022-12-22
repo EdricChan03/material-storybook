@@ -168,10 +168,10 @@ export const Overview: Story<MatButton> = () => ({
 
   .example-button-row {
     display: table-cell;
-    width: 490px;
+    max-width: 600px;
   }
 
-  .example-button-row .mat-button-base {
+  .example-button-row .mat-mdc-button-base {
     margin: 8px 8px 8px 0;
   }
 
@@ -274,6 +274,30 @@ export const Types: Story<MatButton> = () => ({
       <mat-icon>favorite</mat-icon>
     </button>
     <a mat-mini-fab routerLink=".">Link</a>
+  </div>
+
+  <h3>Extended Fab</h3>
+  <div class="example-button-row">
+    <button mat-fab extended color="primary">
+      <mat-icon>favorite</mat-icon>
+      Primary
+    </button>
+    <button mat-fab extended color="accent">
+      <mat-icon>favorite</mat-icon>
+      Accent
+    </button>
+    <button mat-fab extended color="warn">
+      <mat-icon>favorite</mat-icon>
+      Warn
+    </button>
+    <button mat-fab extended disabled>
+      <mat-icon>favorite</mat-icon>
+      Disabled
+    </button>
+    <a mat-fab extended routerLink=".">
+      <mat-icon>favorite</mat-icon>
+      Link
+    </a>
   </div>
   `,
   styles: [`
