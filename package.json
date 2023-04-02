@@ -54,6 +54,8 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^2.0.0",
     "protractor": "~7.0.0",
+    "react": "16",
+    "react-dom": "16",
     "react-is": "^16.13.1",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
