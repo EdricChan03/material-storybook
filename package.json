@@ -57,7 +57,7 @@
     "@types/node": "^18.15.11",
     "@typescript-eslint/eslint-plugin": "5.48.2",
     "@typescript-eslint/parser": "5.48.2",
-    "babel-loader": "^8.3.0",
+    "babel-loader": "^9.1.2",
     "css-loader": "^6.7.3",
     "eslint": "^8.33.0",
     "jasmine-core": "~3.6.0",
