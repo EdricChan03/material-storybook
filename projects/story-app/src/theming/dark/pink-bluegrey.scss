@@ -1,0 +1,18 @@
+// From
+// https://github.com/angular/components/blob/main/src/material/core/theming/prebuilt/pink-bluegrey.scss
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+// Define a theme.
+$primary: mat.define-palette(mat.$pink-palette, 700, 500, 900);
+$accent:  mat.define-palette(mat.$blue-grey-palette, A200, A100, A400);
+
+$theme: mat.define-dark-theme((
+  color: (
+    primary: $primary,
+    accent: $accent
+  ),
+  typography: mat.define-typography-config(),
+  density: 0,
+));

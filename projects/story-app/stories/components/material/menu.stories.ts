@@ -1,5 +1,5 @@
 import { moduleMetadata } from '@storybook/angular';
-import { Story, Meta } from '@storybook/angular/types-6-0';
+import { Story, Meta } from '@storybook/angular';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
@@ -34,18 +34,14 @@ export default {
     xPosition: {
       description: 'Position of the menu in the X-axis.',
       defaultValue: 'after',
-      control: {
-        type: 'select',
-        options: [null, 'before', 'after']
-      }
+      options: [null, 'before', 'after'],
+      control: { type: 'select' }
     },
     yPosition: {
       description: 'Position of the menu in the Y-axis.',
       defaultValue: 'below',
-      control: {
-        type: 'select',
-        options: [null, 'above', 'below']
-      }
+      options: [null, 'above', 'below'],
+      control: { type: 'select' }
     },
     overlapTrigger: {
       description: 'Whether the menu should overlap its trigger.',

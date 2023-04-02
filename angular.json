@@ -131,13 +131,15 @@
           "builder": "@storybook/angular:start-storybook",
           "options": {
             "browserTarget": "story-app:build",
+            "configDir": "projects/story-app/.storybook",
             "port": 6006
           }
         },
         "build-storybook": {
           "builder": "@storybook/angular:build-storybook",
           "options": {
-            "browserTarget": "story-app:build"
+            "browserTarget": "story-app:build",
+            "configDir": "projects/story-app/.storybook"
           }
         }
       }

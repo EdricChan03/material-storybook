@@ -1,0 +1,26 @@
+@use '@angular/material' as mat;
+
+// Light themes
+@use './theming/light/deeppurple-amber' as deeppurple-amber;
+@use './theming/light/indigo-pink' as indigo-pink;
+
+// Dark themes
+@use './theming/dark/pink-bluegrey' as pink-bluegrey;
+@use './theming/dark/purple-green' as purple-green;
+
+// Include all theme styles for the components.
+.deeppurple-amber {
+  @include mat.all-component-themes(deeppurple-amber.$theme);
+}
+
+.indigo-pink {
+  @include mat.all-component-themes(indigo-pink.$theme);
+}
+
+.pink-bluegrey {
+  @include mat.all-component-themes(pink-bluegrey.$theme);
+}
+
+.purple-green {
+  @include mat.all-component-themes(purple-green.$theme);
+}

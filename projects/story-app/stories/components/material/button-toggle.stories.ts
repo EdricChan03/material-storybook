@@ -1,5 +1,5 @@
 import { moduleMetadata } from '@storybook/angular';
-import { Story, Meta } from '@storybook/angular/types-6-0';
+import { Story, Meta } from '@storybook/angular';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
@@ -21,32 +21,35 @@ export default {
     })
   ],
   args: {
-    disabled: false
+    disabled: false,
+    disableRipple: false
   },
   argTypes: {
     appearance: {
       description: 'The appearance style of the button.',
       defaultValue: 'standard',
-      control: {
-        type: 'select',
-        options: [null, 'legacy', 'standard']
-      }
+      options: [null, 'legacy', 'standard'],
+      control: { type: 'select' }
     },
     disabled: {
       description: 'Whether the button is disabled.',
+    },
+    disableRipple: {
+      description: 'Whether ripples are disabled.'
     }
   },
   parameters: {
     controls: { expanded: true }
   }
-} as Meta;
+} satisfies Meta<MatButtonToggle>;
 
 const single: Story<MatButtonToggle> = (args) => ({
   template: `
   <mat-button-toggle
     [appearance]="appearance"
     [checked]="checked"
-    [disabled]="disabled">
+    [disabled]="disabled"
+    [disableRipple]="disableRipple">
     Toggle me!
   </mat-button-toggle>
   `,

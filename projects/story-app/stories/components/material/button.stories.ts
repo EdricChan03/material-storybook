@@ -1,5 +1,5 @@
 import { moduleMetadata } from '@storybook/angular';
-import { Story, Meta } from '@storybook/angular/types-6-0';
+import { Story, Meta } from '@storybook/angular';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
@@ -28,10 +28,8 @@ export default {
   argTypes: {
     color: {
       description: 'Theme color palette for the button.',
-      control: {
-        type: 'select',
-        options: [null, 'primary', 'accent', 'warn']
-      }
+      options: [null, 'primary', 'accent', 'warn'],
+      control: { type: 'select' }
     },
     disabled: {
       description: 'Whether the button is disabled.',
