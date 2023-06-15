@@ -1,21 +1,22 @@
-import { moduleMetadata } from '@storybook/angular';
-import { Story, Meta } from '@storybook/angular';
+import { applicationConfig, Meta, moduleMetadata, Story } from '@storybook/angular';
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocomplete, MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 export default {
   title: 'Components/Angular Material/Autocomplete/Docs Examples',
   component: MatAutocomplete,
   decorators: [
+    applicationConfig({
+      providers: [provideAnimations()]
+    }),
     moduleMetadata({
       imports: [
         CommonModule,
-        BrowserAnimationsModule,
         FormsModule,
         ReactiveFormsModule,
         MatAutocompleteModule,

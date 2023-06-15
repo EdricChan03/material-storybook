@@ -1,20 +1,21 @@
-import { moduleMetadata } from '@storybook/angular';
-import { Story, Meta } from '@storybook/angular';
+import { applicationConfig, Meta, moduleMetadata, Story } from '@storybook/angular';
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { MatButtonToggle, MatButtonToggleGroup, MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatIconModule } from '@angular/material/icon';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 export default {
   title: 'Components/Angular Material/Button Toggle',
   component: MatButtonToggle,
   subcomponents: { MatButtonToggleGroup },
   decorators: [
+    applicationConfig({
+      providers: [provideAnimations()]
+    }),
     moduleMetadata({
       imports: [
         CommonModule,
-        BrowserAnimationsModule,
         MatButtonToggleModule,
         MatIconModule
       ]

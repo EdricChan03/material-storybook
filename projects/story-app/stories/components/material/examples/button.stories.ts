@@ -1,20 +1,21 @@
-import { moduleMetadata } from '@storybook/angular';
-import { Story, Meta } from '@storybook/angular';
+import { applicationConfig, Meta, moduleMetadata, Story } from '@storybook/angular';
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { MatButton, MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 export default {
   title: 'Components/Angular Material/Button/Docs Examples',
   component: MatButton,
   decorators: [
+    applicationConfig({
+      providers: [provideAnimations()]
+    }),
     moduleMetadata({
       imports: [
         CommonModule,
-        BrowserAnimationsModule,
         MatButtonModule,
         MatIconModule
       ]

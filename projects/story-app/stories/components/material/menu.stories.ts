@@ -1,20 +1,21 @@
-import { moduleMetadata } from '@storybook/angular';
-import { Story, Meta } from '@storybook/angular';
+import { applicationConfig, Meta, moduleMetadata, Story } from '@storybook/angular';
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenu, MatMenuModule } from '@angular/material/menu';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 export default {
   title: 'Components/Angular Material/Menu',
   component: MatMenu,
   decorators: [
+    applicationConfig({
+      providers: [provideAnimations()]
+    }),
     moduleMetadata({
       imports: [
         CommonModule,
-        BrowserAnimationsModule,
         MatButtonModule,
         MatIconModule,
         MatMenuModule
